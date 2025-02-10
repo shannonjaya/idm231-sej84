@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'Losta Masta';
+    src: url('../fonts/LostaMasta-Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+@font-face {
+  font-family: 'General Sans Variable';
+  src: url('../fonts/GeneralSans-Variable.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YRDZST';
+  src: url('../fonts/YRDZST\ Semibold.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+    --color-dark: #191a1d;
+      
+    
+    --background-color: var(--color-light);
+    --foreground-color: var(--color-dark);
+    
+    --duration-short: 0.3s;
+    --duration-medium: 0.5s;
+    --duration-long: 1s;
+  
+    --font-sans: 'General Sans Variable', Arial, sans-serif;
+    --font-serif: 'Losta Masta', serif;
+    --font-mandarin: 'YRDZST', serif;
+
+    --rhythm: 1.5rem;
+  }
+    
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+  body {
+    background-image: linear-gradient(#ffffffa6, #ffffffa6), url(../media/bg-texture.jpg);
+    background-position: 0;
+    background-size: auto 45vw;
+    color: var(--color-dark);
+    font-family: var(--font-sans);
+    font-size: 100%;
+    font-weight: 400;
+    margin: var(--rhythm) calc(2*var(--rhythm));
+    /* overflow: hidden; */
+  }
+  
+  h1, h2, h3, p {
+    color: var(--color-dark);
+  }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 5.7rem;
+    letter-spacing: 0.4rem;
+    line-height: 6rem;
+    margin: 0;
+  }
+
+  h2 {
+    font-family: var(--font-sans);
+    font-size: 1.8rem;
+    font-weight: 450;
+    letter-spacing: 0.2rem;
+    line-height: 1rem;
+    margin: 0;
+  }
+
+  h3 {
+    font-family: var(--font-mandarin);
+    font-size: 2rem;
+    line-height: 0;
+    margin: 1.2rem;
+    color: var(--color-dark);
+  }
+
+  p {
+    font-size: 1rem;
+    margin: 1rem 0 0 0;
+  }
+
+  .title-wrapper {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    width: auto;
+
+  }
+
+  .title {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+  }
+
+  .left {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
+
+  #bday-input {
+    background: transparent;
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-dark);
+    border: none;
+    width: auto;
+    text-transform: uppercase;
+    margin-top: var(--rhythm);
+  }
+
+  
