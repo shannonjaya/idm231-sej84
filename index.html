@@ -4,33 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avatar: The Last Airbender | Character Generator </title>
-    <link 
-    rel="stylesheet" 
-    href="styles/screen.css" 
-    media="screen">
+    <link rel="icon" type="image/x-icon" href="media/favicon.png">
+    <link rel="stylesheet" href="styles/screen.css" media="screen">
     <script src="scripts/main.js"></script>
 </head>
 <body>
-    <div class="title-wrapper">
-        <div class="title">
-            <div class="right">
-                <h1>
-                    AVATAR
-                </h1>
-                <h2>THE LAST AIRBENDER</h2>
-                <p> Which character are you based on your birthday?</p>
-                <input id="bday-input" type="date">
+    
+    <main>
+        <div class="title-wrapper">
+            <img class="arrow" src="media/arrow.png" alt="Arrow Graphic">
+            <div class="title">
+                <div class="right">
+                    <h1>
+                        AVATAR
+                    </h1>
+                    <h2>THE LAST AIRBENDER</h2>
+                    <p> Which character are you based on your birthday?</p>
+                    <input id="bday-input" type="date">
+                </div>
+                <div class="left">
+                    <h3>降</h3>
+                    <h3>世</h3>
+                    <h3>神</h3>
+                    <h3>通</h3>
+                </div>
             </div>
-            <div class="left">
-                <h3>降</h3>
-                <h3>世</h3>
-                <h3>神</h3>
-                <h3>通</h3>
-            </div>
+            <button class="help-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" class="help-icon" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+            </svg>
+            </button>
         </div>
-    </div>
-    <div class="characters">
-
-    </div>
+        <div class="characters">
+            <div class="divider" id="divider-1"></div>
+            <div class="divider" id="divider-2"></div>
+            <div class="divider" id="divider-3"></div>
+            <div class="divider" id="divider-4"></div>
+            <div class="divider" id="divider-5"></div>
+            <button class="character" id="aang">
+                <img src="media/aang.jpeg" alt="Aang">
+            </button>
+            <button class="character" id="zuko">
+                <img src="media/zuko.webp" alt="Zuko">
+            </button>
+            <button class="character" id="iroh">
+                <img src="media/iroh.webp" alt="Iroh">
+            </button>
+            <button class="character" id="katara">
+                <img src="media/katara.avif" alt="Katara">
+            </button>
+            <button class="character" id="sokka">
+                <img src="media/sokka.webp" alt="Sokka">
+            </button>
+            <button class="character" id="suki">
+                <img src="media/suki.webp" alt="Suki">
+            </button>
+            <button class="character" id="azula">
+                <img src="media/azula.jpeg" alt="Azula">
+            </button>
+            <button class="character" id="ty-lee">
+                <img src="media/ty-lee.avif" alt="Ty Lee">
+            </button>
+            <button class="character" id="appa">
+                <img src="media/appa.webp" alt="Appa">
+            </button>
+            <button class="character" id="momo">
+                <img src="media/momo.webp" alt="Momo">
+            </button>
+            <button class="character" id="mai">
+                <img src="media/mai.webp" alt="Mai">
+            </button>
+            <button class="character" id="toph">
+                <img src="media/toph.jpeg" alt="Toph">
+            </button>
+        </div>
+                
+    </main>
 </body>
 </html>
