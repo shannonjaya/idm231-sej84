@@ -1,4 +1,4 @@
-const character_data = [
+const character_data = [ // All character data
     {
         name: 'Azula', //Aries
         image: 'media/azula.jpeg',
@@ -74,9 +74,35 @@ const character_data = [
 
 ]
 
+const form = document.querySelector('form');
+
+function log_birthday(birthday) {
+    const date = {
+        year: birthday[0],
+        month: birthday[1],
+        day: birthday [2]
+    }
+    return date;
+}
+
+function handle_submit(event) {
+    event.preventDefault();
+
+    const date_object = log_birthday(form.elements['birthday'].value.split('-'));
+    console.log(date_object);
+    console.log(date_object.day);
+    console.log(date_object.month);
+    console.log(date_object.year);
+}
+
+if (form) {
+    form.addEventListener('submit', handle_submit);
+}
+
 let all_sounds = [];
 
-function stop_all_sounds() { //Make all sounds stop
+
+function stop_all_sounds() { // Make all sounds stop
     all_sounds.forEach((sound) => {
         sound.pause();
         sound.currentTime = 0;
@@ -84,14 +110,14 @@ function stop_all_sounds() { //Make all sounds stop
 
 }
 
-function create_button(button_name, button_image, sound_file) {
+function create_button(button_name, button_image, sound_file) { // Make character buttons
     const btn = document.createElement('button');
     btn.classList.add('character');
-    btn.id  = button_name.toLowerCase().replace(/\s+/g, '_');
+    btn.id  = button_name.toLowerCase().replace(/\s+/g, '_'); // Sets id lowercase and underscore space
     
-    const img= document.createElement('img');
+    const img= document.createElement('img'); 
     img.src = button_image;
-    img.alt= button_name.replace(/([A-Z])/g, ' $1').trim();
+    img.alt= button_name.replace(/([A-Z])/g, ' $1').trim(); 
 
     const audio = new Audio(sound_file);
     all_sounds.push(audio);

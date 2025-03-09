@@ -99,31 +99,57 @@
   .title_wrapper {
     align-items: center;
     background: transparent;
-    /* box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5) inset; */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     justify-content: center;
     width: 36rem;
-
-    .title {
-      display: flex;
-      flex-direction: row-reverse;
-      gap: 1.2rem;
-    }
-
-    .help_button {
-      position: absolute;
-      top: calc(0.5*var(--rhythm));
-      right: calc(0.5*var(--rhythm));
-
-      .help_icon {
-        fill: var(--color-dark);
-      }
-    }
   }
 
-  .characters_container {
+  .title {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1.2rem;
+  }
+
+  #help_button {
+    position: absolute;
+    top: calc(0.5*var(--rhythm));
+    right: calc(0.5*var(--rhythm));
+  }
+
+  .left {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
+
+  form {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: var(--rhythm);
+    margin-top: var(--rhythm);
+  }
+
+  #bday_input {
+    background: transparent;
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-dark);
+    border: none;
+    width: auto;
+    text-transform: uppercase;
+  }
+
+  .characters_container { /* Button Grid */
     align-content: center;
     align-items: start;
     display: grid;
@@ -139,54 +165,55 @@
       'k . l .';
     min-height: 100vh;
     position: relative;
+    border: solid 1px rgba(0, 0, 0);
+  }
 
-    #aang {
-      grid-area: a;
-    }
-  
-    #zuko {
-      grid-area: b;
-    }
-  
-    #iroh {
-      grid-area: c;
-    }
-  
-    #katara {
-      grid-area: d;
-    }
-  
-    #sokka {
-      grid-area: e;
-    }
-  
-    #suki {
-      grid-area: f;
-    }
-  
-    #azula {
-      grid-area: g;
-    }
-  
-    #ty_lee {
-      grid-area: h;
-    }
-  
-    #appa {
-      grid-area: i;
-    }
-  
-    #momo {
-      grid-area: j;
-    }
-  
-    #mai {
-      grid-area: k;
-    }
-  
-    #toph {
-      grid-area: l;
-    }
+  #aang {
+    grid-area: a;
+  }
+
+  #zuko {
+    grid-area: b;
+  }
+
+  #iroh {
+    grid-area: c;
+  }
+
+  #katara {
+    grid-area: d;
+  }
+
+  #sokka {
+    grid-area: e;
+  }
+
+  #suki {
+    grid-area: f;
+  }
+
+  #azula {
+    grid-area: g;
+  }
+
+  #ty_lee {
+    grid-area: h;
+  }
+
+  #appa {
+    grid-area: i;
+  }
+
+  #momo {
+    grid-area: j;
+  }
+
+  #mai {
+    grid-area: k;
+  }
+
+  #toph {
+    grid-area: l;
   }
 
   .divider {
@@ -198,69 +225,49 @@
   }
   
   #divider_1 {
-    left: 0%;
-  }
-  
-  #divider_2 {
     left: 25%;
   }
   
-  #divider_3 {
+  #divider_2 {
     left: 50%;
   }
   
-  #divider_4 {
+  #divider_3 {
     left: 75%;
   }
-  
-  #divider_5 {
-    left: 100%;
+
+  button {
+    all: unset;
   }
 
-  .left {
-      display: flex;
-      flex-direction: column;
-  }
-
-  .right {
+  button.icon {
     display: flex;
     flex-direction: column;
-    gap: 0;
     align-items: center;
   }
 
-  #bday_input {
-    background: transparent;
-    font-family: var(--font-sans);
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--color-dark);
-    border: none;
-    width: auto;
-    text-transform: uppercase;
-    margin-top: var(--rhythm);
-  }
+  button.character {
+    height: 130px;
 
-button.character {
-  /* border-bottom: 1px solid var(--color-dark); */
-  height: 130px;
-  height: 130px;
+    transition-duration: 0.3s;
+    transition-property: transform;
+  }
 
   img {
-     width: 100%;
+    width: 100%;
     height: 130px;
     object-fit: cover;
+  } 
+
+  button.character:hover, button.character:focus, button.character:active {
+    box-shadow: 0 0 20px #00000068;
+    transform: scale(1.3);
   }
-}
 
-button {
-  all: unset;
-}
-
-img.arrow {
-  height: auto;
-  width: 240px;
-  position: absolute;
-  top: 0;
-  margin-bottom: var(--rhythm);
-}
+  img.arrow {
+    height: auto;
+    width: 240px;
+    position: absolute;
+    top: 0;
+    margin-bottom: var(--rhythm);
+  }
