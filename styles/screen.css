@@ -96,7 +96,7 @@
     margin: 1rem 0 0 0;
   }
 
-  .title-wrapper {
+  .title_wrapper {
     align-items: center;
     background: transparent;
     /* box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5) inset; */
@@ -112,12 +112,12 @@
       gap: 1.2rem;
     }
 
-    .help-button {
+    .help_button {
       position: absolute;
       top: calc(0.5*var(--rhythm));
       right: calc(0.5*var(--rhythm));
 
-      .help-icon {
+      .help_icon {
         fill: var(--color-dark);
       }
     }
@@ -168,7 +168,7 @@
       grid-area: g;
     }
   
-    #ty-lee {
+    #ty_lee {
       grid-area: h;
     }
   
@@ -197,23 +197,23 @@
     background-color: var(--color-dark);
   }
   
-  #divider-1 {
+  #divider_1 {
     left: 0%;
   }
   
-  #divider-2 {
+  #divider_2 {
     left: 25%;
   }
   
-  #divider-3 {
+  #divider_3 {
     left: 50%;
   }
   
-  #divider-4 {
+  #divider_4 {
     left: 75%;
   }
   
-  #divider-5 {
+  #divider_5 {
     left: 100%;
   }
 
@@ -229,7 +229,7 @@
     align-items: center;
   }
 
-  #bday-input {
+  #bday_input {
     background: transparent;
     font-family: var(--font-sans);
     font-size: 1.5rem;
