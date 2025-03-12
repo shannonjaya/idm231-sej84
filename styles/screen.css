@@ -61,7 +61,7 @@
     flex-direction: row;
   }
 
-  h1, h2, h3, p {
+  h1, h2, h3, h4 p {
     color: var(--color-dark);
   }
 
@@ -91,6 +91,15 @@
     padding: 0;
   }
 
+  h4 {
+    font-family: var(--font-serif);
+    font-size: 5.7rem;
+    letter-spacing: 0.3rem;
+    line-height: 6rem;
+    margin: 0;
+    margin-bottom: -0.5rem;
+  }
+
   p {
     font-size: 1rem;
     margin: 1rem 0 0 0;
@@ -104,6 +113,7 @@
     min-height: 100vh;
     justify-content: center;
     width: 36rem;
+    padding: calc(3*var(--rhythm));
   }
 
   .title {
@@ -130,7 +140,7 @@
     align-items: center;
   }
 
-  form {
+  .bday_form {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -271,3 +281,62 @@
     top: 0;
     margin-bottom: var(--rhythm);
   }
+
+  .title.minimized {
+    transform: scale(0.8);
+    width: 100%;
+    position: absolute;
+    top: calc(0.5*var(--rhythm));
+    right: 905px;
+  }
+
+  .bday_form.active {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-bottom: var(--rhythm);
+    margin-top: var(--rhythm);
+  }
+  
+  .character_display { 
+    background: transparent;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    /* padding: calc(3*var(--rhythm)); */
+    width: 100%;
+    transform: translateX(50px);
+    transition: 
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+
+  .character_display.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .character_info {
+    display: flex;
+    flex-direction: column;
+    margin-top: calc(1.5*var(--rhythm));
+  }
+
+  #character_gif {
+    width: 100%;
+    height: 200px;
+  }
+
+  #character_name, #character_description {
+    text-align: right;
+  }
+
+  /* align-items: center;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    width: 36rem; */
