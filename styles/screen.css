@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'Losta Masta';
-    src: url('../fonts/LostaMasta-Light.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
+  font-family: 'Losta Masta';
+  src: url('../fonts/LostaMasta-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: 'General Sans Variable';
@@ -20,8 +20,13 @@
   font-display: swap;
 }
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 :root {
-    --color-dark: #191a1d;
+    --color-dark: #151516;
       
     
     --background-color: var(--color-light);
@@ -93,9 +98,9 @@
 
   h4 {
     font-family: var(--font-serif);
-    font-size: 5.7rem;
+    font-size: 4rem;
     letter-spacing: 0.3rem;
-    line-height: 6rem;
+    line-height: 4rem;
     margin: 0;
     margin-bottom: -0.5rem;
   }
@@ -152,7 +157,7 @@
     background: transparent;
     font-family: var(--font-sans);
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 450;
     color: var(--color-dark);
     border: none;
     width: auto;
@@ -256,11 +261,13 @@
     align-items: center;
   }
 
-  button.character {
-    height: 130px;
-
+  button.character, button.icon {
     transition-duration: 0.3s;
     transition-property: transform;
+  }
+
+  button.character {
+    height: 130px;
   }
 
   img {
@@ -269,8 +276,13 @@
     object-fit: cover;
   } 
 
-  button.character:hover, button.character:focus, button.character:active {
+  button.character:hover {
     box-shadow: 0 0 20px #00000068;
+    transform: scale(1.3);
+  }
+
+  
+  button.icon:hover {
     transform: scale(1.3);
   }
 
@@ -283,11 +295,11 @@
   }
 
   .title.minimized {
-    transform: scale(0.8);
+    transform: scale(0.6);
     width: 100%;
     position: absolute;
     top: calc(0.5*var(--rhythm));
-    right: 905px;
+    right: 840px;
   }
 
   .bday_form.active {
@@ -304,18 +316,15 @@
     display: none;
     flex-direction: column;
     justify-content: center;
-    opacity: 0;
-    /* padding: calc(3*var(--rhythm)); */
     width: 100%;
     transform: translateX(50px);
     transition: 
-      opacity 0.5s ease,
       transform 0.5s ease;
   }
 
   .character_display.show {
-    opacity: 1;
     transform: translateX(0);
+    animation: fadeIn 1s;
   }
 
   .character_info {
