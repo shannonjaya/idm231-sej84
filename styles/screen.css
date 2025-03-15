@@ -296,10 +296,11 @@
 
   .title.minimized {
     transform: scale(0.6);
+    transform-origin: top left;
     width: 100%;
-    position: absolute;
-    top: calc(0.5*var(--rhythm));
-    right: 840px;
+    display: flex;
+    justify-content: left;
+    margin-bottom: -2rem;
   }
 
   .bday_form.active {

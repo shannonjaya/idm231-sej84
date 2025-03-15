@@ -87,24 +87,24 @@ const characterData = [ // All character data
 
 const title = document.querySelector('.title');
 const arrow = document.querySelector('.arrow');
-const bday_form = document.querySelector('.bday_form');
-const character_display = document.getElementById('character_display');
-const character_name = document.getElementById('character_name');
-const character_image = document.getElementById('character_image');
-const character_description = document.getElementById('character_description');
+const bdayForm = document.querySelector('.bday_form');
+const characterDisplay = document.getElementById('character_display');
+const characterName = document.getElementById('character_name');
+const characterGif = document.getElementById('character_gif');
+const characterDescription = document.getElementById('character_description');
 
-function minimizeTitle() {
+function minimizeTitle() {  //Minimizes site header to corner
     title.classList.add('minimized');
-    bday_form.classList.add('active');
+    bdayForm.classList.add('active');
     arrow.style.display = 'none';
-    character_display.style.display = 'none';
-    void character_display.offsetHeight;
-    character_display.style.display = 'flex';
+    characterDisplay.style.display = 'none';
+    void characterDisplay.offsetHeight;
+    characterDisplay.style.display = 'flex';
 }
 
 let allSounds = [];  // Catches all playing sounds
 
-function stopSounds() { // Make all sounds stop
+function stopSounds() { // Make all sounds stop 
     allSounds.forEach((sound) => {
         sound.pause();
         sound.currentTime = 0;
@@ -118,19 +118,19 @@ function playSound(sound) {
     }
 }
 
-function displayCharacter(characterName) {
-    let character = characterData.find(char => char.name === characterName)
+function displayCharacter(activeCharacter) { 
+    let character = characterData.find(char => char.name === activeCharacter)
 
     if (character) {
-        character_name.textContent = character.name;
-        character_gif.src = character.gif;
-        character_gif.alt = character.name;
-        character_description.textContent = character.description;
+        characterName.textContent = character.name;
+        characterGif.src = character.gif;
+        characterGif.alt = character.name;
+        characterDescription.textContent = character.description;
 
         minimizeTitle()
 
         setTimeout(() => {
-            character_display.classList.add('show');
+            characterDisplay.classList.add('show');
         }, false);
 
         stopSounds();
@@ -138,7 +138,7 @@ function displayCharacter(characterName) {
         playSound(characterAudio);
 
     } else {
-        console.error("Character not found", characterName);
+        console.error("Character not found");
     }
 }
 
@@ -146,22 +146,22 @@ const helpButton = document.getElementById('help_button');
 
 if (helpButton) {
     helpButton.addEventListener('click', () => {
-        character_name.textContent = 'Need help?';
-        character_gif.src = 'media/atla.webp';
-        character_gif.alt = 'Help';
-        character_description.textContent = "Enter your birthday, hit submit, and we'll tell you what character you are from Avatar: The Last Airbender! You'll get to see their name, image, a little about them, and even hear their voice. Click on buttons to check out more characters!";
+        characterName.textContent = 'Need help?';
+        characterGif.src = 'media/atla.webp';
+        characterGif.alt = 'Help';
+        characterDescription.textContent = "Enter your birthday, hit submit, and we'll tell you what character you are from Avatar: The Last Airbender! You'll get to see their name, image, a little about them, and even hear their voice. Click on buttons to check out more characters!";
 
         minimizeTitle()
 
         setTimeout(() => {
-            character_display.classList.add('show');
+            characterDisplay.classList.add('show');
         }, false);
 
         stopSounds();
     }, false);
 }
 
-function getZodiac(month, day) {
+function getZodiac(month, day) { //Zodiac algorithm
     let character;
     if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
       character = 'Iroh';
