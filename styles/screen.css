@@ -261,9 +261,22 @@
     align-items: center;
   }
 
-  button.character, button.icon {
+  button.character, button.icon, #bday_input { 
     transition-duration: 0.3s;
     transition-property: transform;
+  }
+
+  button.character:hover {
+    box-shadow: 0 0 20px #00000068;
+    transform: scale(1.3);
+  }
+
+  button.icon:hover {
+    transform: scale(1.2);
+  }
+
+  #bday_input:hover {
+    transform: scale(1.1);
   }
 
   button.character {
@@ -276,16 +289,6 @@
     object-fit: cover;
   } 
 
-  button.character:hover {
-    box-shadow: 0 0 20px #00000068;
-    transform: scale(1.3);
-  }
-
-  
-  button.icon:hover {
-    transform: scale(1.3);
-  }
-
   img.arrow {
     height: auto;
     width: 240px;
@@ -294,8 +297,10 @@
     margin-bottom: var(--rhythm);
   }
 
+  /*Display character styles */
+
   .title.minimized {
-    transform: scale(0.6);
+    transform: scale(0.8);
     transform-origin: top left;
     width: 100%;
     display: flex;
@@ -342,11 +347,3 @@
   #character_name, #character_description {
     text-align: right;
   }
-
-  /* align-items: center;
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: center;
-    width: 36rem; */
