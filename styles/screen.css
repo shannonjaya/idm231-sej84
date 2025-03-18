@@ -128,7 +128,7 @@
   }
 
   #help_button {
-    position: absolute;
+    position: fixed;
     bottom: calc(0.5*var(--rhythm));
     right: calc(0.5*var(--rhythm));
   }
